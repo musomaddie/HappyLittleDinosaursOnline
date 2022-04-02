@@ -1,8 +1,17 @@
-import sqlite3
 import click
+import csv
+import sqlite3
 
 from flask import current_app, g
 from flask.cli import with_appcontext
+
+CONTENTS_FN = "game/static/db_content/"
+
+def _get_file_contents(filename):
+    with open(f"{CONTENTS_FN}{filename}.tsv") as f:
+        reader = csv.reader(f, delimiter='\t')
+        reader.__next__()
+        return [row for row in reader]
 
 def get_db():
     """ Connect to the application's configured database. The connection is
@@ -28,12 +37,22 @@ def close_db(e=None):
 
 
 def init_db():
-    """ Clear existing data and create new tables. """
+    """ Clear existing data and create new tables with card data populated """
     db = get_db()
 
     with current_app.open_resource("schema.sql") as f:
         db.executescript(f.read().decode("utf8"))
 
+    # Populate the cards
+    for row in _get_file_contents("disaster_cards"):
+        db.execute(""" INSERT INTO disaster_cards
+                       VALUES(?, ?, ?, ?); """, (row))
+    for row in _get_file_contents("point_cards"):
+        db.execute("""INSERT INTO point_cards
+                      VALUES(?, ?, ?, ?, ?); """, (row))
+    for row in _get_file_contents("instant_cards"):
+        db.execute(""" INSERT INTO instant_cards
+                       VALUES(?, ?, ?); """, (row))
 
 @click.command("init-db")
 @with_appcontext

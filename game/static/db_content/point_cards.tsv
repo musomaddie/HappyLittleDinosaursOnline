@@ -1,0 +1,20 @@
+Card Name	Quantity	Value	Special Effect	Description
+Bonehead	4	4	FALSE	
+Bow and Dino	4	6	FALSE	
+Flaming Chainsaw	1	9	TRUE	During this round, all other Point card effects are ignored.
+Grave Maker	4	3	FALSE	
+Handy Pan	4	2	FALSE	
+Hungry Plant	1	8	TRUE	You may swap the Point cards of any two other players.
+Iced Ptea	3	8	FALSE	
+Meteor Cannon	3	9		
+Mouth Trap	2	5	TRUE	During scoring this round, switch the score of the highest-scoring player with the score of the lowest-scoring player after scores have been calculated.
+Pet Rock	4	0	TRUE	You may discard a Point card from your hand, then add its point value to your score this round.
+Run Home Bat	4	5	FALSE	
+Treenoculars	2	7	TRUE	You may look at the top 2 cards in the deck. Choose a card and add it to your hand. Discard the other card
+Delicious Smoothie'	2	3	TRUE	You may discard a Point card with an effect from your hand, then add its point value  to your score this round.
+Dino Grabber	2	1	TRUE	You may look at another player's hand. Choose a card and add it to your hand.
+Cool Stick	4	1	FALSE	
+Special Star Fruit	2	6	TRUE	During scoring this round, double the effects of Score Booster and Score Sapper cards.
+Grappling Snake	2	2	TRUE	You may swap this card with the Point card of the player to your right or left. You cannot swap for a card that has an effect.
+Fire Spray	2	4	TRUE	You may discard up to 3 cards from your hand.
+Sting Stabber	3	7	FALSE	
