@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask
+from game import db
 
 def create_app(test_config=None):
     """ Create and configure an instance of the Flask application. """
@@ -22,5 +23,7 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+
+    db.init_app(app)
 
     return app
