@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 from game import db
 
 def create_app(test_config=None):
@@ -26,4 +26,7 @@ def create_app(test_config=None):
 
     db.init_app(app)
 
+    @app.route("/", methods=["GET"])
+    def opening_page():
+        return render_template("home_page.html")
     return app

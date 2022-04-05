@@ -30,7 +30,7 @@ def get_db():
 
 def close_db(e=None):
     """ If this request is connected to the database, close the connection. """
-    db = g.pop("db")
+    db = g.pop("db", None)
 
     if db is not None:
         db.close()

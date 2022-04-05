@@ -1,0 +1,9 @@
+@font-face {
+	font-family: "Happy Little Dinosaur Font"; 
+	src: url('fonts/HappyLittleDinosaurs-regular.otf');
+}
+
+body {
+	font-family: "Happy Little Dinosaur Font", sans-serif;
+	font-size: xx-large;
+}
