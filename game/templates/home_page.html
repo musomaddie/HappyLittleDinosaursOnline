@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
-
 {% block content %}
+<img src="{{ url_for('static', 
+		  filename='images/background/title_wide.jpg') }}"
+	 id="mainpage_wide"
+	 alt="Main Image - stego with meotrites" 
+	 class="background_wide" >
+<img src="{{ url_for('static',
+		  filename='images/background/title_thin.jpg') }}"
+	 id="mainpage_thin"
+	 alt="Main Image - stego with meotrites"
+	 class="background_tall hidden">
 <body>
 Hello this is a home page!
 </body>

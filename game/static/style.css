@@ -12,9 +12,23 @@ body {
 	font-size: xx-large;
 }
 
-.background {
-	min-width: 1024px;
-	/* min-height: 100%; */
+.hidden {
+	display: none;
+}
+
+.background_wide {
+	min-width: 1400px;
+
+	width: 100%;
+	height: auto;
+
+	position: fixed;
+		top: 0;
+		left: 0;
+}
+
+.background_tall {
+	min-height: 800;
 
 	width: 100%;
 	height: auto;
