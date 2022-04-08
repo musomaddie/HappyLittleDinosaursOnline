@@ -37,6 +37,18 @@ html {
 	font-size: 60px;
 }
 
+.tt_1_tall {
+	position: absolute;
+	top: 80px;
+	left: 100px;
+}
+
+.tt_2_tall {
+	position: absolute;
+	top: 140px;
+	left: 100px;
+}
+
 .background_wide {
 	min-width: 900px;
 
