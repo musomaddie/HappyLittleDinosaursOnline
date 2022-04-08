@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-<img src="{{ url_for('static', 
-		  filename='images/background/title_wide.jpg') }}"
-	 id="mainpage_wide"
-	 alt="Main Image - stego with meotrites" 
-	 class="background_wide" >
-<img src="{{ url_for('static',
-		  filename='images/background/title_thin.jpg') }}"
-	 id="mainpage_thin"
-	 alt="Main Image - stego with meotrites"
-	 class="background_tall hidden">
+
 <body>
-Hello this is a home page!
+	<div class="title_container">
+		<img src="{{ url_for('static', 
+				  filename='images/background/title_wide.jpg') }}"
+			 id="mainpage_wide"
+			 alt="Main Image - stego with meotrites" 
+			 class="background_wide" >
+		<img src="{{ url_for('static',
+				  filename='images/background/title_thin.jpg') }}"
+			 id="mainpage_thin"
+			 alt="Main Image - stego with meotrites"
+			 class="background_tall hidden">
+		<h1 class="title_text tt_1_wide"
+			id="tt_1_wide"> happy little </h1>
+		<h1 class="title_text tt_2_wide"
+			id="tt_2_wide"> DINOSAURS </h1>
+		<h1 class="title_text tt_1_tall hidden"
+			id="tt_1_tall"> happy little </h1>
+		<h1 class="title_text tt_2_tall hidden"
+			id="tt_2_tall"> DINOSAURS </h1>
+	</div>
 </body>
 {% endblock %}

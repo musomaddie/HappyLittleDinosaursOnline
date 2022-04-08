@@ -3,28 +3,49 @@
 	src: url('fonts/HappyLittleDinosaurs-regular.otf');
 }
 
-html {
-	background-color: #24141f;
+/*
+ *Root class to store some helpful variables
+ */
+:root {
+	 --title_right_margin: 16px;
 }
 
-body {
-	font-family: "Happy Little Dinosaur Font", sans-serif;
-	font-size: xx-large;
+html {
+	background-color: #24141f;
 }
 
 .hidden {
 	display: none;
 }
 
+.title_text {
+	font-family: "Happy Little Dinosaur Font", sans-serif;
+	font-size: 55px;
+	color: white;
+}
+
+.tt_1_wide {
+ 	position: absolute;
+	top: 40px;
+	right: var(--title_right_margin);
+}
+
+.tt_2_wide {
+	position: absolute;
+	top: 100px;
+	right: var(--title_right_margin);
+	font-size: 60px;
+}
+
 .background_wide {
-	min-width: 1400px;
+	min-width: 900px;
 
 	width: 100%;
 	height: auto;
 
 	position: fixed;
-		top: 0;
-		left: 0;
+	top: 0;
+	left: 0;
 }
 
 .background_tall {
@@ -34,6 +55,6 @@ body {
 	height: auto;
 
 	position: fixed;
-		top: 0;
-		left: 0;
+	top: 0;
+	left: 0;
 }
