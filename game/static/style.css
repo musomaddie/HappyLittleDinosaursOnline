@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Rubik+Bubbles&display=swap');
+
 @font-face {
 	font-family: "Happy Little Dinosaurs Font"; 
 	src: url("fonts/HappyLittleDinosaurs-Regular.otf");
@@ -9,10 +11,14 @@
 :root {
 	 --title_right_margin: 16px;
 	 --nav_bar_height: 64px;
+	 --dark_background_color: #271521;
+	 --white: #FEFEFD;
+	 --title_font: 'Rubik Bubbles', cursive;
+	 --body_font: 'Boogaloo', cursive;
 }
 
 html {
-	background-color: #24141f;
+	background-color: var(--dark_background_color);
 }
 
 .hidden {
@@ -25,7 +31,9 @@ html {
 nav {
 	/* Appearance */
 	width: 100vw;
-	background-color: #d6EFFF;
+	background-color: var(--dark_background_color);
+	color: var(--white);
+	font-family: var(--title_font);
 
 	/* Position */
 	height: var(--nav_bar_height);
@@ -61,7 +69,7 @@ nav {
 .title_text {
 	font-family: "Happy Little Dinosaurs Font", sans-serif;
 	font-size: 55px;
-	color: white;
+	color: var(--white);
 }
 
 .tt_1_wide {
