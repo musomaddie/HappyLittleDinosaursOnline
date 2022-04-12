@@ -8,6 +8,7 @@
  */
 :root {
 	 --title_right_margin: 16px;
+	 --nav_bar_height: 64px;
 }
 
 html {
@@ -22,9 +23,15 @@ html {
  * Styling for the navigation bar
  */
 nav {
+	/* Appearance */
 	width: 100vw;
 	background-color: #d6EFFF;
-	height: 64px;
+
+	/* Position */
+	height: var(--nav_bar_height);
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .nav_content_overall {
@@ -32,12 +39,13 @@ nav {
 	padding: 0;
 
 	display: flex;
+	align-items: center;
 }
 
 .nav_content {
 	list-style-type: none;
-	text-align: center;
 
+	text-align: center;
 	width: 20vw;
 	font-size: 30px;
 }
@@ -88,7 +96,7 @@ nav {
 	height: auto;
 
 	position: fixed;
-	top: 0;
+	top: var(--nav_bar_height);
 	left: 0;
 }
 
@@ -99,6 +107,6 @@ nav {
 	height: auto;
 
 	position: fixed;
-	top: 0;
+	top: var(--nav_bar_height);
 	left: 0;
 }
