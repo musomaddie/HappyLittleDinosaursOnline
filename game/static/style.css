@@ -1,6 +1,6 @@
 @font-face {
-	font-family: "Happy Little Dinosaur Font"; 
-	src: url('fonts/HappyLittleDinosaurs-regular.otf');
+	font-family: "Happy Little Dinosaurs Font"; 
+	src: url("fonts/HappyLittleDinosaurs-Regular.otf");
 }
 
 /*
@@ -18,8 +18,40 @@ html {
 	display: none;
 }
 
+/*
+ * Styling for the navigation bar
+ */
+nav {
+	width: 100vw;
+	background-color: #d6EFFF;
+	height: 64px;
+}
+
+.nav_content_overall {
+	margin: 0;
+	padding: 0;
+
+	display: flex;
+}
+
+.nav_content {
+	list-style-type: none;
+	text-align: center;
+
+	width: 20vw;
+	font-size: 30px;
+}
+
+.nav_logo {
+	font-family: "Happy Little Dinosaurs Font", sans-serif;
+}
+
+/*
+ * Styling for the main page
+ */
+
 .title_text {
-	font-family: "Happy Little Dinosaur Font", sans-serif;
+	font-family: "Happy Little Dinosaurs Font", sans-serif;
 	font-size: 55px;
 	color: white;
 }
