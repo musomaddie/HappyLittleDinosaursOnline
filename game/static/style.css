@@ -12,6 +12,8 @@
 	 --title_right_margin: 16px;
 	 --nav_bar_height: 64px;
 	 --dark_background_color: #271521;
+	 --old-mauve: #4D2636ff;
+	 --persian-plum: #7B2E2Dff;
 	 --white: #FEFEFD;
 	 --title_font: 'Rubik Bubbles', cursive;
 	 --body_font: 'Boogaloo', cursive;
@@ -52,10 +54,13 @@ nav {
 
 .nav_content {
 	list-style-type: none;
-
 	text-align: center;
 	width: 20vw;
 	font-size: 30px;
+}
+
+.nav_content:hover {
+	background-color: var(--persian-plum);
 }
 
 .nav_logo {
