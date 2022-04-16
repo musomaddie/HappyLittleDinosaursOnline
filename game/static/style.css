@@ -28,12 +28,27 @@ html {
 }
 
 /*
+ * Styling for the rules page
+ */
+.rules {
+	/* Position */
+	height: var(--nav_bar_height);
+	position: absolute;
+
+	color: white;
+}
+
+h1 {
+	font-size: 60px;
+}
+
+/*
  * Styling for the navigation bar
  */
 nav {
 	/* Appearance */
 	width: 100vw;
-	background-color: var(--dark_background_color);
+	background-color: var(--old-mauve);
 	color: var(--white);
 	font-family: var(--title_font);
 
@@ -57,6 +72,11 @@ nav {
 	text-align: center;
 	width: 20vw;
 	font-size: 30px;
+}
+
+.nav_link {
+	text-decoration: none;
+	color: var(--white);
 }
 
 .nav_content:hover {
