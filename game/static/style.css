@@ -22,6 +22,9 @@
 html {
 	background-color: var(--dark_background_color);
 }
+	/*
+	 *TODO: change fonts - they DO NOT WORK. Can use a custom one for the title and a SERIF one for the body
+	 */
 
 .hidden {
 	display: none;
@@ -36,10 +39,18 @@ html {
 	position: absolute;
 
 	color: white;
+	font-family: var(--body_font);
+	font-size: 25px;
 }
 
 h1 {
 	font-size: 60px;
+	font-family: var(--title_font);
+}
+
+h2 {
+	font-size: 45px;
+	font-family: var(--title_font);
 }
 
 /*
