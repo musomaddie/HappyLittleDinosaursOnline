@@ -13,7 +13,6 @@ def test_get_close_db(app):
 
     assert "closed" in str(e.value)
 
-
 def test_init_db(runner, monkeypatch):
     class Recorder:
         called = False

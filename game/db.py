@@ -24,7 +24,6 @@ def get_db():
             detect_types=sqlite3.PARSE_DECLTYPES
         )
         g.db.row_factory = sqlite3.Row
-
     return g.db
 
 
@@ -53,6 +52,7 @@ def init_db():
     for row in _get_file_contents("instant_cards"):
         db.execute(""" INSERT INTO instant_cards
                        VALUES(?, ?, ?); """, (row))
+    db.commit()
 
 @click.command("init-db")
 @with_appcontext
