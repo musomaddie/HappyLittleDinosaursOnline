@@ -1,3 +1,5 @@
+from game.dinosaur import DinosaurCharacter
+
 class Player:
     """ The class that stores a player who is actually playing the game.
 
@@ -36,7 +38,7 @@ class Player:
     def choose_dinosaur_character(self, dino):
         """ Assigns the selected dinosaur to this player.
 
-        Is a method so I can (later) do some constraint checking such as
-        making sure that no-one has already chosen that dinosaur.
+        Parameters:
+            dino    DinosaurName    the name of the dinosaur to create
         """
-        self.dinosaur_character = dino
+        self.dinosaur_character = DinosaurCharacter.create_dinosaur(dino)
