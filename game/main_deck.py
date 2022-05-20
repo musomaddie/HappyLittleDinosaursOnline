@@ -4,7 +4,9 @@ from game.point_card import PointCard
 import random
 
 class MainDeck:
-    """ Handles all operations around the Main Deck for a game.
+    """ Handles all operations around the Main Deck for a game. There should be
+    exactly one of these for any given game. All interactions with cards in the
+    main deck should be handled through this class.
 
     Parameters:
         cards   list[Card]      contains all the cards that can be drawn
