@@ -31,11 +31,3 @@ class Card:
         else:
             raise ValueError(f"'{other}' of type {type(other)} cannot be "
                              f"compared to {self.card_name} (Card)")
-
-    @staticmethod
-    def load_cards():
-        """ Loads both the main and disaster card decks.
-        Returns:
-            [MainDeck, DisasterDeck]    the created decks.
-    """
-    pass
