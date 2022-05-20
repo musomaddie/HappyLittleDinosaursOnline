@@ -39,13 +39,11 @@ class InstantCard(Card):
             list[InstantCard] the newly created cards
         """
         db = get_db()
-        card_list = db.execute("SELECT * FROM instant_cards;")
-        cards = []
-        for card in card_list:
-            for _ in range(card["quantity"]):
-                cards.append(InstantCard(card["card_name"],
-                                         card["description"]))
-        return cards
+        # TODO: list comphrension??
+        return [InstantCard(card["card_name"],
+                            card["description"])
+                for card in db.execute("SELECT * FROM instant_cards;")
+                for _ in range(card["quantity"])]
 
 
 class TimeOfPlay(Enum):

@@ -41,12 +41,9 @@ class PointCard(Card):
             list[PointCard]     the newly created cards.
         """
         db = get_db()
-        card_list = db.execute("SELECT * FROM point_cards;")
-        cards = []
-        for card in card_list:
-            for _ in range(card["quantity"]):
-                cards.append(PointCard(card["card_name"],
-                                       card["value"],
-                                       card["special_effect"] == "TRUE",
-                                       card["special_effect_description"]))
-        return cards
+        return [PointCard(card["card_name"],
+                          card["value"],
+                          card["special_effect"] == "TRUE",
+                          card["special_effect_description"])
+                for card in db.execute("SELECT * FROM point_cards;")
+                for _ in range(card["quantity"])]
