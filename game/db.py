@@ -28,6 +28,7 @@ def get_db():
 
 
 def close_db(e=None):
+    # TODO: when should I be using this??
     """ If this request is connected to the database, close the connection. """
     db = g.pop("db", None)
 
