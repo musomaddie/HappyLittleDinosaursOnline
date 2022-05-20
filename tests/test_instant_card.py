@@ -23,7 +23,7 @@ def test_init(card):
     [("Disaster Redirect", TimeOfPlay.DISASTER_ADD),
      ("Score Booster", TimeOfPlay.SCORING),
      ("Score Inversion", TimeOfPlay.SCORING),
-     ("Score Snapper", TimeOfPlay.SCORING),
+     ("Score Sapper", TimeOfPlay.SCORING),
      ("Disaster Insurance", TimeOfPlay.DISASTER_ADD)]
 )
 def test_time_of_play_find_value(value, top):

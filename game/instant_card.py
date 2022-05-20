@@ -76,7 +76,7 @@ class TimeOfPlay(Enum):
             return TimeOfPlay.SCORING
         elif card_name == "Score Inversion":
             return TimeOfPlay.SCORING
-        elif card_name == "Score Snapper":
+        elif card_name == "Score Sapper":
             return TimeOfPlay.SCORING
         else:
             raise ValueError(f"{card_name} has no recognised time of play")
