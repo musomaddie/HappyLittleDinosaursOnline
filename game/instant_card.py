@@ -39,7 +39,6 @@ class InstantCard(Card):
             list[InstantCard] the newly created cards
         """
         db = get_db()
-        # TODO: list comphrension??
         return [InstantCard(card["card_name"],
                             card["description"])
                 for card in db.execute("SELECT * FROM instant_cards;")
