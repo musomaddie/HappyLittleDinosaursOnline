@@ -3,7 +3,7 @@ from collections import defaultdict
 from game.db import _get_file_contents
 from pytest import fixture, mark
 
-# import pytest
+import pytest
 
 TESTING_NAME = "Score Booster"
 TESTING_DESC = "testing description"
@@ -28,6 +28,11 @@ def test_init(card):
 )
 def test_time_of_play_find_value(value, top):
     assert TimeOfPlay.find_value(value) == top
+
+def test_time_of_play_find_value_raises_error():
+    with pytest.raises(ValueError) as e:
+        TimeOfPlay.find_value("Testing")
+    assert str(e.value) == "Testing has no recognised time of play"
 
 def test_repr(card):
     assert card.__repr__() == "Score Booster (played SCORING)"
