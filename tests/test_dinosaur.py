@@ -16,8 +16,10 @@ def test_init_dinosaur():
 
 @pytest.mark.parametrize(
     "dino_name,expected_attr,expected_col",
-    [(DinosaurName.NERVOUS_REX, {dt.PREDATORY: 1, dt.EMOTIONAL: -1}, "orange")
-     ]
+    [(DinosaurName.NERVOUS_REX, {dt.PREDATORY: 1, dt.EMOTIONAL: -1}, "orange"),
+     (DinosaurName.BAD_LUCK_BRONTO, {dt.NATURAL: 1, dt.PREDATORY: -1}, "blue"),
+     (DinosaurName.CRY_CERATOPS, {dt.EMOTIONAL: 1, dt.NATURAL: -1}, "red"),
+     (DinosaurName.STEGO, {dt.METEOR: 1}, "green")]
 )
 def test_create_dinosaur(dino_name, expected_attr, expected_col):
     dino = DinosaurCharacter.create_dinosaur(dino_name)

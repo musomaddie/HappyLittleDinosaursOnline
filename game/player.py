@@ -1,5 +1,3 @@
-from game.dinosaur import DinosaurCharacter
-
 class Player:
     """ The class that stores a player who is actually playing the game.
 
@@ -41,4 +39,4 @@ class Player:
         Parameters:
             dino    DinosaurName    the name of the dinosaur to create
         """
-        self.dinosaur_character = DinosaurCharacter.create_dinosaur(dino)
+        self.dinosaur_character = dino
