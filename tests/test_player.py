@@ -31,3 +31,10 @@ def test_draw(hand_mock, player):
     card = "Card 1"
     player.draw(card)
     assert hand_mock.called_with(card)
+
+@patch("game.player.Hand.need_cards")
+def test_can_draw(hand_mock, player):
+    # Again patching because I don't need to test the implementation of the
+    # hand method it should just be called
+    player.can_draw()
+    assert hand_mock.called_once()

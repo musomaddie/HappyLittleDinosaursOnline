@@ -20,6 +20,8 @@ class Player:
         choose_dinosaur_character(dino)     assigns the given dinosaur
                                             character to this player
         draw(card)                          adds the given card to hand
+        can_draw()              boolean     determines whether or not this
+                                            player can draw more cards
     """
 
     def __init__(self, name):
@@ -57,3 +59,12 @@ class Player:
             card    Card    the card to add to hand
         """
         self.hand.add_card(card)
+
+    def can_draw(self):
+        """ Returns a boolean reflecting whether or not the player can draw
+        more cards.
+
+        Returns:
+            boolean     true iff the player can draw more cards
+        """
+        return self.hand.need_cards()
