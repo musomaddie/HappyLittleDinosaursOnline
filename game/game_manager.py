@@ -1,3 +1,6 @@
+from game.main_deck import MainDeck
+from game.disaster_deck import DisasterDeck
+
 class GameManager:
     """ This class is responsible for managing the flow of the game. However,
     it should delegate responsibility reasonably to other managers. There
@@ -30,5 +33,5 @@ class GameManager:
                 msg = "Cannot start a game without any players"
             raise ValueError(msg)
         self.players = players
-        self.main_deck = None
-        self.disaster_deck = None
+        self.main_deck = MainDeck.load()
+        self.disaster_deck = DisasterDeck.load()

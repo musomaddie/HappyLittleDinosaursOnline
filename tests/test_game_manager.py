@@ -1,5 +1,6 @@
 from game.game_manager import GameManager
 from pytest import mark
+from unittest.mock import patch
 
 import pytest
 
@@ -14,9 +15,11 @@ def test_init_raises(players, error_message):
         GameManager(players)
     assert str(e.value) == error_message
 
-
-def test_init():
-    gm = GameManager(["Alice", "Bob"])
+@patch("game.game_manager.MainDeck.load")
+@patch("game.game_manager.DisasterDeck.load")
+def test_init(dd_load_mock, md_load_mock, app):
+    with app.app_context():
+        gm = GameManager(["Alice", "Bob"])
     assert len(gm.players) == 2
-    assert gm.main_deck is None
-    assert gm.disaster_deck is None
+    assert md_load_mock.called
+    assert dd_load_mock.called
