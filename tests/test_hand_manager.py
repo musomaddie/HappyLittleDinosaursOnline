@@ -7,3 +7,23 @@ def hand():
 
 def test_init(hand):
     assert len(hand.cards) == 0
+
+def test_add_card(hand):
+    # TODO: change ot use actual cards
+    hand.add_card("Card 1")
+    assert len(hand.cards) == 1
+    assert hand.cards[0] == "Card 1"
+
+    hand.add_card("Card 2")
+    assert len(hand.cards) == 2
+    assert hand.cards[0] == "Card 1"
+    assert hand.cards[1] == "Card 2"
+
+def test_needs_cards(hand):
+    assert hand.need_cards()
+    for card in ["Card 1", "Card 2", "Card 3", "Card 4"]:
+        hand.add_card(card)
+        assert hand.need_cards()
+
+    hand.add_card("Card 5")
+    assert not hand.need_cards()
