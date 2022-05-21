@@ -24,3 +24,6 @@ def test_eq_raises_error(example_card):
         example_card == "I am not a card"
     assert str(e.value) == ("'I am not a card' of type <class 'str'> cannot "
                             "be compared to Testing (Card)")
+
+def test_repr(example_card):
+    assert example_card.__repr__() == TESTING_NAME

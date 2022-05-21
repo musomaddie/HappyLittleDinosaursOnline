@@ -16,6 +16,9 @@ class Card:
         """
         self.card_name = card_name
 
+    def __repr__(self):
+        return self.card_name
+
     def __eq__(self, other):
         """ Checking equality between this card and another by comparing the
         card_name.
