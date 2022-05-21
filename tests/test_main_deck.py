@@ -3,7 +3,7 @@ from game.db import _get_file_contents
 
 def test_load(app):
     with app.app_context():
-        cards = MainDeck.load()
+        deck = MainDeck.load()
 
     # Since this list is randomised I'm just going to check it's the expected
     # length.
@@ -14,4 +14,4 @@ def test_load(app):
     expected_count = (
         sum([int(row[1]) for row in _get_file_contents("instant_cards")])
         + sum([int(row[1]) for row in _get_file_contents("point_cards")]))
-    assert len(cards) == expected_count
+    assert len(deck.cards) == expected_count

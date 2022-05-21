@@ -15,7 +15,7 @@ class MainDeck:
         init()      creates a new deck.
 
     Static Methods:
-        load()      loads all the cards from the database.
+        load()  MainDeck    loads all the cards from the database.
     """
 
     def __init__(self, cards):
@@ -34,8 +34,8 @@ class MainDeck:
         """ Loads and returns a new deck based on cards found in the database.
 
         Returns:
-            list[Card]      the newly created deck.
+            MainDeck    the newly created deck
         """
         deck = PointCard.load() + InstantCard.load()
         random.shuffle(deck)
-        return deck
+        return MainDeck(deck)
