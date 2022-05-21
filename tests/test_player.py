@@ -2,6 +2,7 @@ from game.dinosaur import DinosaurCharacter
 from game.dinosaur_names import DinosaurName
 from game.player import Player
 from pytest import fixture
+from unittest.mock import patch
 
 TEST_PLAYER_NAME = "Test Player"
 DINO = DinosaurCharacter.create_dinosaur(DinosaurName.STEGO)
@@ -22,3 +23,11 @@ def test_init_player(player):
 def test_choose_dino(player):
     player.choose_dinosaur_character(DINO)
     assert player.dinosaur_character.name == DinosaurName.STEGO
+
+@patch("game.player.Hand.add_card")
+def test_draw(hand_mock, player):
+    # Patching the call because I don't care how it actually works, it just
+    # should be called.
+    card = "Card 1"
+    player.draw(card)
+    assert hand_mock.called_with(card)

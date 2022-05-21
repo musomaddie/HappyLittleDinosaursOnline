@@ -19,6 +19,7 @@ class Player:
                                             the given name
         choose_dinosaur_character(dino)     assigns the given dinosaur
                                             character to this player
+        draw(card)                          adds the given card to hand
     """
 
     def __init__(self, name):
@@ -48,3 +49,11 @@ class Player:
             dino    DinosaurName    the name of the dinosaur to create
         """
         self.dinosaur_character = dino
+
+    def draw(self, card):
+        """ Adds the given card to this players hand.
+
+        Parameters:
+            card    Card    the card to add to hand
+        """
+        self.hand.add_card(card)
