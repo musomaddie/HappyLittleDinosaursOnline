@@ -1,4 +1,4 @@
-from game.dinosaur_names import DinosaurName as name
+from enum import Enum, auto
 from game.disaster_type import DisasterType as dt
 
 class DinosaurCharacter:
@@ -57,16 +57,16 @@ class DinosaurCharacter:
         attributes = {}
         colour = ""
 
-        if dinosaur_name == name.NERVOUS_REX:
+        if dinosaur_name == DinosaurName.NERVOUS_REX:
             attributes = {dt.PREDATORY: 1, dt.EMOTIONAL: -1}
             colour = "orange"
-        elif dinosaur_name == name.BAD_LUCK_BRONTO:
+        elif dinosaur_name == DinosaurName.BAD_LUCK_BRONTO:
             attributes = {dt.NATURAL: 1, dt.PREDATORY: -1}
             colour = "blue"
-        elif dinosaur_name == name.CRY_CERATOPS:
+        elif dinosaur_name == DinosaurName.CRY_CERATOPS:
             attributes = {dt.EMOTIONAL: 1, dt.NATURAL: -1}
             colour = "red"
-        elif dinosaur_name == name.STEGO:
+        elif dinosaur_name == DinosaurName.STEGO:
             attributes = {dt.METEOR: 1}
             colour = "green"
         else:  # Should never reach here.
@@ -74,3 +74,10 @@ class DinosaurCharacter:
                 f"{dinosaur_name} is not recognised as a dinosaur.")
 
         return DinosaurCharacter(dinosaur_name, attributes, colour)
+
+
+class DinosaurName(Enum):
+    NERVOUS_REX = auto()
+    BAD_LUCK_BRONTO = auto()
+    CRY_CERATOPS = auto()
+    STEGO = auto()

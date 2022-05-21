@@ -1,5 +1,4 @@
-from game.dinosaur import DinosaurCharacter
-from game.dinosaur_names import DinosaurName
+from game.dinosaur import DinosaurCharacter, DinosaurName
 from game.player import Player
 from pytest import fixture
 from unittest.mock import patch
