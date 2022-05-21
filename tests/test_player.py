@@ -16,7 +16,7 @@ def test_init_player(player):
     assert player.dinosaur_character is None
     assert player.escape_route == 0
     assert len(player.disaster_area) == 0
-    assert player.hand is None
+    assert len(player.hand.cards) == 0
     assert player.account is None
 
 def test_choose_dino(player):

@@ -1,3 +1,5 @@
+from game.hand_manager import Hand
+
 class Player:
     """ The class that stores a player who is actually playing the game.
 
@@ -11,6 +13,12 @@ class Player:
         hand                    Hand                the players hand
         account                 PlayerAccount       optionally link to a
                                                     created account.
+
+    Methods:
+        __init__(name)                      creates a new player object with
+                                            the given name
+        choose_dinosaur_character(dino)     assigns the given dinosaur
+                                            character to this player
     """
 
     def __init__(self, name):
@@ -30,7 +38,7 @@ class Player:
         self.dinosaur_character = None
         self.escape_route = 0
         self.disaster_area = []
-        self.hand = None
+        self.hand = Hand()
         self.account = None
 
     def choose_dinosaur_character(self, dino):
