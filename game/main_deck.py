@@ -12,7 +12,8 @@ class MainDeck:
         cards   list[Card]      contains all the cards that can be drawn
 
     Methods:
-        init()      creates a new deck.
+        init()                  creates a new deck.
+        draw()          card    removes and returns the deck's top card
 
     Static Methods:
         load()  MainDeck    loads all the cards from the database.
@@ -28,6 +29,19 @@ class MainDeck:
                                     an Instant Card.
         """
         self.cards = cards
+
+    def draw(self):
+        """ Removes and returns the top card from the deck.
+
+        Returns:
+            Card    the card from the top of the deck
+
+        Raises:
+            ValueError      if the deck has no more cards
+        """
+        if len(self.cards) == 0:
+            raise ValueError("Cannot draw from an empty deck")
+        return self.cards.pop(0)
 
     @staticmethod
     def load():

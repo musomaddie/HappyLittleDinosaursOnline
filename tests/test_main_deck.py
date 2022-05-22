@@ -1,5 +1,18 @@
-from game.main_deck import MainDeck
 from game.db import _get_file_contents
+from game.card import Card
+from game.main_deck import MainDeck
+from pytest import fixture
+
+import pytest
+
+@fixture
+def main_deck(app):
+    # I don't really care what the cards are, but I want an easy way to
+    # differentiate where they initially were in the deck.
+    main_deck = MainDeck(
+        [Card(f"Card #{i + 1}") for i in range(35)]
+    )
+    return main_deck
 
 def test_load(app):
     with app.app_context():
@@ -15,3 +28,16 @@ def test_load(app):
         sum([int(row[1]) for row in _get_file_contents("instant_cards")])
         + sum([int(row[1]) for row in _get_file_contents("point_cards")]))
     assert len(deck.cards) == expected_count
+
+def test_draw(main_deck):
+    og_len = len(main_deck.cards)
+    card = main_deck.draw()
+    assert card.card_name == "Card #1"
+    assert len(main_deck.cards) == og_len - 1
+
+def test_draw_no_cards():
+    main_deck = MainDeck([])
+    with pytest.raises(ValueError) as e:
+        main_deck.draw()
+
+    assert str(e.value) == "Cannot draw from an empty deck"
