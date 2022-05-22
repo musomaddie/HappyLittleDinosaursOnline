@@ -35,3 +35,30 @@ class GameManager:
         self.players = players
         self.main_deck = MainDeck.load()
         self.disaster_deck = DisasterDeck.load()
+        self._deal_cards()
+
+    def _deal_cards(self):
+        """ A helper function responsible for adding cards to players hands
+        from the main deck until everyone has five cards. Should not be called
+        from outside this class.
+        """
+        players_to_draw = [player for player in self.players
+                           if player.can_draw()]
+        while len(players_to_draw) > 0:
+            for player in players_to_draw:
+                card = self.main_deck.draw()
+                player.draw(card)
+            players_to_draw = [player for player in self.players
+                               if player.can_draw()]
+
+
+    def play_round(self):
+        """ Starts another round of the game. Returns a boolean which
+        represents whether or not someone has won.
+
+        Returns:
+            boolean     true iff someone has won this game
+        """
+        # NOTE: my implementation plan is to implement the bare skeleton of the
+        # round before going through and adding details.
+        pass
