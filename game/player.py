@@ -17,6 +17,7 @@ class Player:
     Methods:
         __init__(name)                      creates a new player object with
                                             the given name
+        __repr__                str         returns string represenation
         choose_dinosaur_character(dino)     assigns the given dinosaur
                                             character to this player
         draw(card)                          adds the given card to hand
@@ -43,6 +44,12 @@ class Player:
         self.disaster_area = []
         self.hand = Hand()
         self.account = None
+
+    def __repr__(self):
+        if self.dinosaur_character:
+            return (f"{self.name.upper()} ({self.dinosaur_character.name}) "
+                    f"{str(self.hand)}")
+        return f"{self.name.upper()} (NONE) {str(self.hand)}"
 
     def choose_dinosaur_character(self, dino):
         """ Assigns the selected dinosaur to this player.
