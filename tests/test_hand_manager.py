@@ -8,6 +8,12 @@ def hand():
 def test_init(hand):
     assert len(hand) == 0
 
+def test_repr(hand):
+    assert hand.__repr__() == "[]"
+
+    hand.cards = ["Hello", "World"]
+    assert hand.__repr__() == "[Hello, World]"
+
 def test_len(hand):
     assert len(hand) == 0
     [hand.add_card(i) for i in range(4)]
