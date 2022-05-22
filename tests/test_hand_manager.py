@@ -6,7 +6,12 @@ def hand():
     return Hand()
 
 def test_init(hand):
-    assert len(hand.cards) == 0
+    assert len(hand) == 0
+
+def test_len(hand):
+    assert len(hand) == 0
+    [hand.add_card(i) for i in range(4)]
+    assert len(hand) == 4
 
 def test_add_card(hand):
     # TODO: change ot use actual cards

@@ -14,6 +14,13 @@ def main_deck(app):
     )
     return main_deck
 
+def test_len(main_deck):
+    assert len(main_deck) == 35
+
+    main_deck.cards = []
+    assert len(main_deck) == 0
+
+
 def test_load(app):
     with app.app_context():
         deck = MainDeck.load()
@@ -27,13 +34,13 @@ def test_load(app):
     expected_count = (
         sum([int(row[1]) for row in _get_file_contents("instant_cards")])
         + sum([int(row[1]) for row in _get_file_contents("point_cards")]))
-    assert len(deck.cards) == expected_count
+    assert len(deck) == expected_count
 
 def test_draw(main_deck):
-    og_len = len(main_deck.cards)
+    og_len = len(main_deck)
     card = main_deck.draw()
     assert card.card_name == "Card #1"
-    assert len(main_deck.cards) == og_len - 1
+    assert len(main_deck) == og_len - 1
 
 def test_draw_no_cards():
     main_deck = MainDeck([])

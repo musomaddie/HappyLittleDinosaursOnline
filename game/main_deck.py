@@ -12,7 +12,8 @@ class MainDeck:
         cards   list[Card]      contains all the cards that can be drawn
 
     Methods:
-        init()                  creates a new deck.
+        __init__()              creates a new deck.
+        __len__()       int     returns the number of cards in the deck
         draw()          card    removes and returns the deck's top card
 
     Static Methods:
@@ -30,6 +31,10 @@ class MainDeck:
         """
         self.cards = cards
 
+    def __len__(self):
+        """ Returns the number of cards in the deck. """
+        return len(self.cards)
+
     def draw(self):
         """ Removes and returns the top card from the deck.
 
@@ -39,7 +44,7 @@ class MainDeck:
         Raises:
             ValueError      if the deck has no more cards
         """
-        if len(self.cards) == 0:
+        if len(self) == 0:
             raise ValueError("Cannot draw from an empty deck")
         return self.cards.pop(0)
 

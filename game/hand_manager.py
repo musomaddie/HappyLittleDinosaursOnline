@@ -7,6 +7,7 @@ class Hand:
 
     Methods:
         __init__()                  creates a new hand object (with no cards)
+        __len__()       int         returns the number of cards in the hand
         need_cards()    boolean     returns true if the hand should contain
                                     more cards
         add_card(card)              adds the given card to the hand
@@ -15,6 +16,10 @@ class Hand:
     def __init__(self):
         """ Initialises a new empty hand. """
         self.cards = []
+
+    def __len__(self):
+        """ Returns the number of cards in the hand. """
+        return len(self.cards)
 
     def need_cards(self):
         """ Returns true if the hand does not contain all five cards required
