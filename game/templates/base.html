@@ -1,9 +1,31 @@
 <!doctype html>
-<title>{% block title %}{% endblock %} - Flaskr</title>
+<title>{% block title %}{% endblock %}Happy Little Dinosaurs</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="{{ url_for('static',
 			    filename='scripts.js') }}"></script>
+
+<!-- The Navigation Bar -->
+<nav>
+	<ul class="nav_content_overall">
+		<li class="nav_content">
+			<a class="nav_link" href="/rules">
+				Rules </a> 
+		</li>
+		<li class="nav_content">Game</li>
+		<li class="nav_content nav_logo">
+			<a class="nav_link" href="/">
+			happy little <br> DINOSAURS 
+			</a>
+		</li>
+		<li class="nav_content">About Website</li>
+		<li class="nav_content">Buy a Copy</li>
+	</ul>
+</nav>
+
+<!-- Empty section to populate the content of each page -->
 <section class="content">
+<body>
 	{% block content %}{% endblock %}
+</body>
 </section>

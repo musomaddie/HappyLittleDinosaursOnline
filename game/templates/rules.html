@@ -1,0 +1,310 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="rules">
+<h1> Rules </h1>
+<h2> Introduction </h2>
+<p> Welcome to Happy Little Dinosaurs. In this game, you are a Dinosaur, 
+and life repeatedly tries to punch you in the face. You'll do your best to 
+avoid Natural, Predatory, and Emotional disasters while dodging Meteors, and 
+much like in the real world, you'll probably fail. But keep picking yourself 
+back up, because the first Dinosaur to reach 50 points (or the last Dinosaur 
+standing) wins the game! Yay!
+</p>
+
+<h2> How To Start </h2>
+<!-- This section is different from what is in the box due to the website format. -->
+<p>
+Start by choosing a Dinosaur character which loads the corresponding Dinosaur 
+board. 
+Your player board includes your Dinosaur character, your Escape Route (which
+you'll use to collect your points), and your Disaster Area (in which you will
+collect Disaster cards throughout the game). 
+TODO: include pictures of dinosaur characters.
+</p>
+<p>
+The light backed cards are shuffled together and each player is dealt five
+cards. 
+The remaining cards are placed face down in the center to form the Main deck.
+</p>
+<p>
+The dark backed cards are shuffled together to form the Disaster deck which is
+placed face down next to the Main deck.
+</p>
+TODO: include picture of cards and deck.
+
+<h3> The Dinosaur Board </h3>
+TODO: explain the dino board complete with images
+
+<h2> How To Play </h2>
+<p>
+Each round, players will play Point cards from their hands in the hopes of 
+collecting points and avoiding disasters. 
+To start a round, the top card of the Disaster deck is automatically flipped 
+face-up.
+Each player must select a Point card from their hand.
+If a player does not have any Point cards in their hand during this part of the
+round, that player must discard their hand and draw 5 new cards (and repeat the
+process until they have a Point card that they can play).
+After all players have selected a Point card, the selected cards will be 
+revealed simultaneously.
+</p>
+
+<p>
+In each round, scoring occurs after all players reveal their cards. 
+The player with the highest score in the round collects points equal to their 
+score and their Dinosaur meeple will be moved along the Escape Route on their 
+player board accordingly.
+The face-up disaster card will be added to the player with the lowest score's 
+Disaster Area.
+If a player adds a Disaster card to their Disaster Area, they may discard a
+card from their hand. 
+A player's base score equals the point value of the face-up Point card in front
+of them, but that score can go up or down based on bonuses from Dinosaur Traits,
+Point card effects, and Instant card effects (which will be explained in the 
+subsequent sections).
+</p>
+
+<p> At the end of each round, each players' Dinosaur meeple will be moved 
+forward on their Escape Route a number of spaces equal to the number of 
+disasters in their Disaster Area.
+Cards from the Main deck will then be added to each players hand until they have
+5 cards in their hand. 
+All face-up Point cards and Instant cards will then be moved to the discard
+pile.
+If at any time the Main deck has no remaining cards, the discard pile will be
+shuffled and placed face-down to form a new Main deck.
+</p>
+
+<h3> Disaster Cards </h3>
+<p>
+The Dinosaur world is full of disasters, just like real life! 
+There are three main types of Disaster cards in addition to Meteor cards 
+(which are extra disastrous).
+Each type of Disaster card is denoted by a color and a symbol:
+</p>
+TODO: include the images.
+NATURAL DISASTER, PREDATORY DISASTER, EMOTIONAL DISASTER
+
+<p>
+If you collect three Disaster cards of the same type or three different types of 
+Disaster cards, you are eliminated from the game and must immediately discard
+your hand.
+TODO: include images of elimination.
+</p>
+
+<p> 
+Meteor cards are special Disaster cards that act as any of the three types of
+Disaster cards. 
+You can think of Meteors as the chameleons of Disaster cards. This means that
+you will be eliminated from the game if you collect a Meteor card in addition to
+any two other Disaster cards.
+TODO: include images of elimination.
+</p>
+
+<p>
+But Disaster cards aren't all bad.
+For each Disaster card in your Disaster Area, your Dinosaur Meeple moves forward
+1 space on your Escape Route at the end of each round.
+What doesn't kill you makes you stronger!
+</p>
+
+<h3> Dinosaur Traits </h3>
+<p>
+Each Dinosaur player board has your Dinosaur's traits listed in the bottom left
+corner. 
+</p>
+TODO: include image (and maybe show where they can be found when selecting a
+dino character).
+
+<p>
+These traits will give you advantages or disadvantages when facing certain types
+of Disaster cards. 
+The advantages and disadvantages of your Dinosaur Traits are added or subtracted
+from your Point card's value each round. 
+For example, if you are playing as Nervous Rex, 1 point will be added to your
+score each round when facing a Predatory Disaster card and 1 point will be
+subtracted from your score each round when facing an Emotional Disaster card.
+</p>
+
+<h3> Point Cards </h3>
+Point cards feature various weapons, trinkets and good luck charms that you will
+use to try to collect points and avoid disasters. 
+Each has a point value between 0 and 9 that is used for scoring during the
+round.
+</p>
+TODO: include an example point card image.
+
+<p>
+Some Point cards simple show a point value, while others also have a card
+effect. 
+These card effects may allow players to draw or discard cards, swap Point cards
+with another player, or even alter the round's scoring rules.
+Unless otherwise specified, players may use their Point card's effect after
+revealing their Point card, but before scoring occurs in the round.
+</p>
+
+TODO: include card effect images (Pet Rock, Fire Spray, Treenoculars)
+
+<p>
+If multiple players play Point cards with effects in the same round, the player
+with the lowest Point card value may use their Point card's effect first. *
+<!-- TODO: hyperlink the star -->
+If two players play a Point card with the same value, the player with the fewest
+total collected points on their Escape Route may use their Point card's effect
+first.
+If multiple players are tied for Point card number value and total points
+collected, the player to use their Point card's effect first is randomly
+selected.
+Point Card effects can only be used once per card per round.
+</p>
+
+<p>
+* There are a few key exceptions to this order of using Point card effects.
+These exceptions are card effects that specify when the effect occurs by
+starting "During this round" or "During scoring this round". 
+If a card states "During this round" its effect occurs before the effects of any
+other Point cards in the round, regardless of those cards' point values. 
+If a card states "During scoring this round", its effect occurs when you
+calculate scores after all other Point cards effects have been used.
+</p>
+
+TODO: include images of different point cards (Mouth Trap, Special Star Fruit,
+Flaming Chainsaw).
+
+<h3> Instant Cards </h3>
+<p>
+You can use Instant cards to tip the odds in your favour or save your Dinosaur
+in a pinch. 
+Instant cards state when you can play them.
+</p>
+
+<p>
+If an Instant card states "Play this card during scoring", you may play that
+card when scores are being calculated after all Point card effects have been
+used.
+</p>
+TODO: include instant card images (Score Booster, Score Sapper, Score
+Inversion).
+
+<p>
+If an Instant card states, "Play this card if you would add a Disaster card to
+your Disaster Area this round", you may play that card if you have the lowest
+score after scoring is complete to avoid adding a Disaster card to your Disaster
+Area (or if another player sends a Disaster card your way).
+</p>
+TODO: include images: Disaster Insurance, Disaster Redirect.
+
+<h3> Resolving Ties </h3>
+<p>
+In some rounds, multiple players will have the same score after adding Point
+card values, bonuses from Disaster cards, advantages and disadvantages from
+Dinosaur Traits, and the effects of Instant cards. 
+</p>
+
+<p>
+If multiple players tie for the highest score in a round, each of those players
+collects points equal to their score in the round and their Dinosaur meeple is
+moved forward on their Escape Route.
+</p>
+
+<p>
+If multiple players tie for the lowest score in a round, Sudden Death occurs!
+Each player tied for the lowest score must player another Point card face-down
+from their hand. When all players are ready, simultaneously flip these cards
+face-up. 
+The face-up Disaster card is added to the Disaster Area of the player with the
+lowest point value during Sudden Death.
+During Sudden Death, Dinosaur Traits, Point card effects and Instant cards do
+not apply. 
+No player involved in Sudden Death collects points for the round, even if their
+new Point card exceeds the score of the highest-scoring player in the round.
+</p>
+
+<p>
+If a tie occurs during Sudden Death, the process is repeated until the tie is
+broken.
+If at any time one of the players involved in Sudden Death does not have a Point
+card in their hand to play, the face-up Disaster card is added to their Disaster
+Area.
+If more than one player runs out of Point card in their hand during Sudden
+Death, the face-up Disaster card is moved to the bottom of the Disaster deck,
+the round is ended and no-one should ever talk about it again.
+</p>
+
+<p>
+If scores are inverted in a round where multiple players tie for the highest or
+lowest score, the score of all players involved are inverted.
+For example, if two players are tied for the lowest score in the round at 3
+points each and the highest score in that round is 9 points, both of the players
+originally tied for the lowest score received a score of 9 points for the round,
+and the player who originally had a score of 9 points now receives a score of 3
+points. 
+Note: inversion effects do not apply to Sudden Death; during Sudden Death you
+always want to play the higher card than your opponent(s) to avoid adding a
+Disaster card to your Disaster area.
+</p>
+
+<p>
+If all players tie, the face-up Disaster card is moved to the bottom of the
+Disaster deck and the round is ended.
+No player collects points for the round.
+</p>
+
+<h3> How To Win </h3>
+<p>
+There are two ways to win the game:
+<ul>
+	<li> Be the first Dinosaur to reach 50 points on your Escape Route. </li>
+	<li> Be the last Dinosaur left in the game. </li>
+</ul>
+Looks like you've successfully delayed your inevitable extinction. 
+Unfortunately all your friends are now dead :( 
+But on the bright side, you're a winner! 
+</p>
+TODO: include cute picture! (maybe on the side depending on width??)
+
+<h3> Helpful Reminders </h3>
+<ul>
+	<li> If you have 5 Instant cards in your hand, and no Point cards, your hand
+		will be discarded and replaced with 5 new cards. </li>
+	<li> If scores are inverted in a round, only the player(s) with the highest
+		and lowest scores are affected. </li>
+	<li> For each Disaster card in your Disaster Area, your Dinosaur meeple is
+		moved forward 1 space on your Escape Route at the end of the round.
+	</li>
+	<li> When the score in each round is calculated it takes into account the
+		Disaster Cards in your Disaster Area, Dinosaur Traits, Point card
+		effects and Instant card effects. </li>
+		<!-- TODO: I'm not sure why the disaster cards in disaster area are -->
+		<!-- considered. -->
+	<li> Each time a Disaster card is added to your disaster Area, you may
+		discard a card from your hand. 
+		This is a useful way to get rid of cards you might not want! </li>
+	<li> At the end of each round you will automatically draw cards until you
+		have 5 cards left in your hand. </li>
+</ul>
+
+<h3> 2-Player Rules </h3>
+<p>
+If you are playing with two players, a couple of modifications are made to the
+standard rules. 
+These modifications can be toggled off in the game waiting room.
+TODO: include a picture of the toggle.
+</p>
+
+<p>
+Before the game is started, all Point cards with a value of 1, 2, or 3 are
+removed from the Main deck. 
+Each player is eliminated only after they collect either four Disaster cards of
+the same type or two of each of the three types of Disaster cards in their
+Disaster area.
+</p>
+
+<p>
+If you choose to play without these modifications you may find the game to feel
+less balanced. 
+</p>
+
+</div>
+{% endblock %}

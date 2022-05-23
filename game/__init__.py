@@ -29,4 +29,9 @@ def create_app(test_config=None):
     @app.route("/", methods=["GET"])
     def opening_page():
         return render_template("home_page.html")
+
+    @app.route("/rules", methods=["GET"])
+    def rules():
+        return render_template("rules.html")
+
     return app

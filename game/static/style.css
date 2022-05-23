@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Rubik+Bubbles&display=swap');
+
 @font-face {
-	font-family: "Happy Little Dinosaur Font"; 
-	src: url('fonts/HappyLittleDinosaurs-regular.otf');
+	font-family: "Happy Little Dinosaurs Font"; 
+	src: url("fonts/HappyLittleDinosaurs-Regular.otf");
 }
 
 /*
@@ -8,20 +10,102 @@
  */
 :root {
 	 --title_right_margin: 16px;
+	 --nav_bar_height: 64px;
+	 --dark_background_color: #271521;
+	 --old-mauve: #4D2636ff;
+	 --persian-plum: #7B2E2Dff;
+	 --white: #FEFEFD;
+	 --title_font: 'Rubik Bubbles', cursive;
+	 --body_font: 'Boogaloo', cursive;
 }
 
 html {
-	background-color: #24141f;
+	background-color: var(--dark_background_color);
 }
+	/*
+	 *TODO: change fonts - they DO NOT WORK. Can use a custom one for the title and a SERIF one for the body
+	 */
 
 .hidden {
 	display: none;
 }
 
-.title_text {
-	font-family: "Happy Little Dinosaur Font", sans-serif;
-	font-size: 55px;
+/*
+ * Styling for the rules page
+ */
+.rules {
+	/* Position */
+	position: absolute;
+	top: var(--nav_bar_height);
+
 	color: white;
+	font-family: var(--body_font);
+	font-size: 25px;
+}
+
+h1 {
+	font-size: 60px;
+	font-family: var(--title_font);
+}
+
+h2 {
+	font-size: 45px;
+	font-family: var(--title_font);
+}
+
+/*
+ * Styling for the navigation bar
+ */
+nav {
+	/* Appearance */
+	width: 100vw;
+	background-color: var(--old-mauve);
+	color: var(--white);
+	font-family: var(--title_font);
+
+	/* Position */
+	height: var(--nav_bar_height);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.nav_content_overall {
+	margin: 0;
+	padding: 0;
+
+	display: flex;
+	align-items: center;
+}
+
+.nav_content {
+	list-style-type: none;
+	text-align: center;
+	width: 20vw;
+	font-size: 30px;
+}
+
+.nav_link {
+	text-decoration: none;
+	color: var(--white);
+}
+
+.nav_content:hover {
+	background-color: var(--persian-plum);
+}
+
+.nav_logo {
+	font-family: "Happy Little Dinosaurs Font", sans-serif;
+}
+
+/*
+ * Styling for the main page
+ */
+
+.title_text {
+	font-family: "Happy Little Dinosaurs Font", sans-serif;
+	font-size: 55px;
+	color: var(--white);
 }
 
 .tt_1_wide {
@@ -56,7 +140,7 @@ html {
 	height: auto;
 
 	position: fixed;
-	top: 0;
+	top: var(--nav_bar_height);
 	left: 0;
 }
 
@@ -67,6 +151,6 @@ html {
 	height: auto;
 
 	position: fixed;
-	top: 0;
+	top: var(--nav_bar_height);
 	left: 0;
 }
