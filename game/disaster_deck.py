@@ -11,8 +11,9 @@ class DisasterDeck:
         cards   list[DisasterCard]  contains all the cards in the disaster deck
 
     Methods:
-        __init__()              creates a new deck
-        __len__()       int     returns the number of cards in the deck
+        __init__()                      creates a new deck
+        __len__()       int             returns the number of cards in the deck
+        draw()          DisasterCard    removes and returns the first card
 
     Static Methods:
         load()      loads all the cards from the database ready for game start
@@ -29,6 +30,10 @@ class DisasterDeck:
 
     def __len__(self):
         return len(self.cards)
+
+    def draw(self):
+        # TODO: throw an error if there's no cards - this shouldn't be reached
+        return self.cards.pop(0)
 
     @staticmethod
     def load():
