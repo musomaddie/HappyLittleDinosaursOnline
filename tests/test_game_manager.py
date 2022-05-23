@@ -46,6 +46,7 @@ def test_init_card_loads(dd_load_mock, md_load_mock, app):
     with app.app_context():
         game = GameManager([Player("Alice"), Player("Bob")])
     assert len(game.players) == 2
+    assert game.active_disaster_card is None
     assert md_load_mock.called
     assert dd_load_mock.called
 

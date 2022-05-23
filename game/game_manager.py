@@ -7,12 +7,17 @@ class GameManager:
     should only ever be one of these per game.
 
     Parameters:
-        players         list[Player]    all the players in this game
-        main_deck       MainDeck        the main deck for this game
-        disaster_deck   DisasterDeck    the disaster deck for this game
+        players                 list[Player]    all the players in this game
+        main_deck               MainDeck        the main deck for this game
+        disaster_deck           DisasterDeck    the disaster deck for this game
+        active_disaster_card    DisasterCard    the disaster card that is
+                                                active for the current round
+                                                (if it exists)
 
     Methods:
-        __init__(players)      creates a new game manager for the given players
+        __init__(players)       creates a new game manager for the given
+                                players
+        start_round             starts the next round in this game
     """
     def __init__(self, players):
         """ Creates a new game manager when a game is started. All we know
@@ -35,6 +40,7 @@ class GameManager:
         self.players = players
         self.main_deck = MainDeck.load()
         self.disaster_deck = DisasterDeck.load()
+        self.active_disaster_card = None
         self._deal_cards()
 
     def _deal_cards(self):
@@ -51,14 +57,30 @@ class GameManager:
             players_to_draw = [player for player in self.players
                                if player.can_draw()]
 
-
-    def play_round(self):
+    def start_round(self):
         """ Starts another round of the game. Returns a boolean which
-        represents whether or not someone has won.
+        represents whether or not someone has won. (?) not sure if I want this
+        Responsible for revealing the next disaster card and telling the
+        players to choose a disaster card
 
         Returns:
             boolean     true iff someone has won this game
         """
         # NOTE: my implementation plan is to implement the bare skeleton of the
         # round before going through and adding details.
+        # A disaster card is selected and revealed to every player
+        self.active_disaster_card = self.disaster_deck.draw()
+
+        # All the players are then prompted to choose a card to display
+        #   this is where it gets tricky: this all needs to happen at the same
+        #   time but every player has a slightly different screen / view and
+        #   only once EVERYONE has played a card can the game continue
+
+        # I could come back to this later?? Basically what happens is that
+        # everyone picks a card and then it continues.
+
+        # TODO: in flask I would like this to all happen simultaneously - i.e.
+        # all players receive the prompt asking for the card to be choosen at
+        # the same time.
+
         pass
