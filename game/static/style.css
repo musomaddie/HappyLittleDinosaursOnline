@@ -35,8 +35,8 @@ html {
  */
 .rules {
 	/* Position */
-	height: var(--nav_bar_height);
 	position: absolute;
+	top: var(--nav_bar_height);
 
 	color: white;
 	font-family: var(--body_font);
