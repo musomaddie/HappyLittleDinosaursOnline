@@ -30,14 +30,15 @@ html {
 	display: none;
 }
 
+.content {
+	position: absolute;
+	top: var(--nav_bar_height);
+}	
+
 /*
  * Styling for the rules page
  */
 .rules {
-	/* Position */
-	position: absolute;
-	top: var(--nav_bar_height);
-
 	color: white;
 	font-family: var(--body_font);
 	font-size: 25px;
