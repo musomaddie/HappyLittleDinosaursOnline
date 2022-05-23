@@ -1,6 +1,7 @@
 import os
+import sys
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from game import db
 
 def create_app(test_config=None):
@@ -26,6 +27,8 @@ def create_app(test_config=None):
 
     db.init_app(app)
 
+    # TODO: all of these being in the create app method does NOT spark joy
+
     @app.route("/", methods=["GET"])
     def opening_page():
         return render_template("home_page.html")
@@ -33,5 +36,9 @@ def create_app(test_config=None):
     @app.route("/rules", methods=["GET"])
     def rules():
         return render_template("rules.html")
+
+    @app.route("/game", methods=("GET", "POST"))
+    def game_page():
+        return render_template("game_start.html")
 
     return app
