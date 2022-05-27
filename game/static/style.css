@@ -33,6 +33,7 @@ html {
 .content {
 	position: absolute;
 	top: var(--nav_bar_height);
+	color: var(--white);
 }	
 
 /*
