@@ -1,7 +1,7 @@
 import os
 
-from flask import Flask, render_template, request
-from game import db
+from flask import Flask, render_template
+from game import game_controller, web_content, db
 
 def create_app(test_config=None):
     """ Create and configure an instance of the Flask application. """
@@ -26,18 +26,7 @@ def create_app(test_config=None):
 
     db.init_app(app)
 
-    # TODO: all of these being in the create app method does NOT spark joy
-
-    @app.route("/", methods=["GET"])
-    def opening_page():
-        return render_template("home_page.html")
-
-    @app.route("/rules", methods=["GET"])
-    def rules():
-        return render_template("rules.html")
-
-    @app.route("/game", methods=("GET", "POST"))
-    def game_page():
-        return render_template("game_menu.html")
+    app.register_blueprint(game_controller.bp)
+    app.register_blueprint(web_content.bp)
 
     return app
