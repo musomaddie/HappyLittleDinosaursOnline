@@ -1,5 +1,4 @@
 import os
-import sys
 
 from flask import Flask, render_template, request
 from game import db
@@ -39,6 +38,6 @@ def create_app(test_config=None):
 
     @app.route("/game", methods=("GET", "POST"))
     def game_page():
-        return render_template("game_start.html")
+        return render_template("game_menu.html")
 
     return app
