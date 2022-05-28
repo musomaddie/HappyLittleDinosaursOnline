@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask, render_template
+from flask_socketio import SocketIO
 from game import game_controller, web_content, db
 
 def create_app(test_config=None):
@@ -30,3 +31,9 @@ def create_app(test_config=None):
     app.register_blueprint(web_content.bp)
 
     return app
+
+if __name__ == "__main__":
+    app = create_app()
+    socketio = SocketIO(app)
+    socketio.run(app)
+
