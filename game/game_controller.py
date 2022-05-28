@@ -13,7 +13,7 @@ def join_or_start_game_page():
         return redirect(url_for("game.start_new_game"))
     return redirect(url_for("game.join_game"))
 
-@bp.route("/start_new", methods=("GET",))
+@bp.route("/start", methods=("GET",))
 def start_new_game():
     """ Manages starting a new game. """
     return render_template("game_start_new.html")
