@@ -5,9 +5,9 @@ $(document).ready(function() {
 		console.log("joined");
 		socket.emit("joined", {});
 	});
+});
 
-	socket.on("my_response", function(msg, cb) {
-		console.log("I have received a message");
-		$("#log").append("<br>" + msg.data).html();
-	});
+socket.on("my_response", function(msg, cb) {
+	console.log("I have receieved a message");
+	$("#log").append("<br>" + msg.data).html();
 });
