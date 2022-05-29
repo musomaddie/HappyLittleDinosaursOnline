@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 Start a new game!
+<!--
 TODO: include configuration options
+-->
 <form method="post" class="game_start">
-	<input type="submit" name="start" value="Start Game">
+	<input type="submit" value="Start a new game">
 </form>
+<!--
+This is where the script needs to go. I'm not sure of the nicest way to structure this.
+-->
+<!--
+<script src="{{ url_for('static',
+			 	filename='game_socket_handler.js') }}"></script>
+-->
 {% endblock %}
