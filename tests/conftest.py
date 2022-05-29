@@ -11,7 +11,7 @@ from game.db import init_db
 def app():
     """ Create and configure a new app instance for each test. """
     db_fd, db_path = tempfile.mkstemp()
-    app = create_app({"TESTING": True, "DATABASE": db_path})
+    app = create_app(test_config={"TESTING": True, "DATABASE": db_path})
 
     with app.app_context():
         init_db()
@@ -26,6 +26,7 @@ def app():
 def client(app):
     """A test client for the app. """
     return app.test_client()
+
 
 @pytest.fixture
 def runner(app):
