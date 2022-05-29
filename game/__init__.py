@@ -7,9 +7,10 @@ from game import db
 socketio = SocketIO()
 
 
-def create_app(test_config=None):
+def create_app(debug=False, test_config=None):
     """ Create and configure an instance of the Flask application. """
     app = Flask(__name__, instance_relative_config=True)
+    app.debug = debug
     app.config.from_mapping(
         # TODO: update this for production to actually be secret
         SECRET_KEY="dev",
@@ -37,9 +38,3 @@ def create_app(test_config=None):
     socketio.init_app(app)
 
     return app
-
-
-if __name__ == "__main__":
-    app = create_app()
-    socketio = SocketIO(app)
-    socketio.run(app)

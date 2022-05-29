@@ -1,18 +1,13 @@
-const socket = require("socket.io");
-const io = socket(server);
-
+var socket = io();
 $(document).ready(function() {
-	// Connect to the Socket.IO server.
-	var socket = io;
-
-	// Event handler for new connections
+	socket = io.connect("http://" + document.domain + ":" + location.port + "/chat");
 	socket.on("connect", function() {
-		socket.emit("my_event", {data: "I'm connected!"});
+		console.log("joined");
+		socket.emit("joined", {});
 	});
 
-	// Event handler for server sent data: adding it to a log for my sanity
 	socket.on("my_response", function(msg, cb) {
-		$('#log').append('AHHH');
-		// $('#log').append('<br>' + $('<div/>').text('Received #' msg.count + ': ' + msg.data).html());
+		console.log("I have received a message");
+		$("#log").append("<br>" + msg.data).html();
 	});
 });

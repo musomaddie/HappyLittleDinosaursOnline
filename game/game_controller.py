@@ -4,6 +4,7 @@ from flask_socketio import emit
 
 bp = Blueprint("game", __name__, url_prefix="/game")
 
+
 @bp.route("/", methods=("GET", "POST"))
 def join_or_start_game_page():
     """ Manages the initial navigation to the game main page which contains two
@@ -15,16 +16,20 @@ def join_or_start_game_page():
         return redirect(url_for("game.start_new_game"))
     return redirect(url_for("game.join_game"))
 
+
 @bp.route("/start", methods=("GET",))
 def start_new_game():
     """ Manages starting a new game. """
     return render_template("game_start_new.html")
+
 
 @bp.route("/join", methods=("GET",))
 def join_game():
     """ Manages joining an existing game. """
     return render_template("game_join.html")
 
-# @socketio.event
-# def connect():
-#     emit("my_response", {"data": "Connected"})
+
+@socketio.event
+def connect():
+    print("joined python");
+    emit("my_response", {"data": "Connected"})
