@@ -1,4 +1,6 @@
+from . import socketio
 from flask import Blueprint, redirect, request, render_template, url_for
+from flask_socketio import emit
 
 bp = Blueprint("game", __name__, url_prefix="/game")
 
@@ -22,3 +24,7 @@ def start_new_game():
 def join_game():
     """ Manages joining an existing game. """
     return render_template("game_join.html")
+
+# @socketio.event
+# def connect():
+#     emit("my_response", {"data": "Connected"})
