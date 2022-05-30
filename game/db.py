@@ -7,11 +7,13 @@ from flask.cli import with_appcontext
 
 CONTENTS_FN = "game/static/db_content/"
 
+
 def _get_file_contents(filename):
     with open(f"{CONTENTS_FN}{filename}.tsv") as f:
         reader = csv.reader(f, delimiter='\t')
         reader.__next__()
         return [row for row in reader]
+
 
 def get_db():
     """ Connect to the application's configured database. The connection is
@@ -46,13 +48,15 @@ def init_db():
     # Populate the cards
     for row in _get_file_contents("disaster_cards"):
         db.execute(""" INSERT INTO disaster_cards
-                       VALUES(?, ?, ?, ?); """, (row))
+                       VALUES(?, ?, ?, ?); """, row)
     for row in _get_file_contents("point_cards"):
         db.execute("""INSERT INTO point_cards
-                      VALUES(?, ?, ?, ?, ?); """, (row))
+                      VALUES(?, ?, ?, ?, ?); """, row)
     for row in _get_file_contents("instant_cards"):
         db.execute(""" INSERT INTO instant_cards
-                       VALUES(?, ?, ?); """, (row))
+                       VALUES(?, ?, ?); """, row)
+    db.commit()
+
 
 @click.command("init-db")
 @with_appcontext
