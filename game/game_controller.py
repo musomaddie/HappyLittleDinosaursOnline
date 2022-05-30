@@ -5,6 +5,8 @@ from . import socketio
 from flask import Blueprint, redirect, request, render_template, url_for
 from flask_socketio import emit, join_room
 
+from game.db import get_all_room_ids, add_room_id
+
 bp = Blueprint("game", __name__, url_prefix="/game")
 
 ROOM_ID = ""
@@ -12,11 +14,13 @@ ROOM_ID = ""
 
 def generate_room_id():
     """ Generates a random ID of 6 characters that is not currently in use. """
-    # TODO: need to check this isn't already in use and then write a test for
-    #  it.
     global ROOM_ID
     generated = "".join(random.choice(string.ascii_uppercase) for _ in range(6))
+    while generated in get_all_room_ids():
+        generated = "".join(random.choice(string.ascii_uppercase)
+                            for _ in range(6))
     ROOM_ID = generated
+    add_room_id(generated)  # TODO: don't forgot to remove it on delete.
     return generated
 
 
