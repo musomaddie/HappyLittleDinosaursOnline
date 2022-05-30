@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS point_cards;
 DROP TABLE IF EXISTS instant_cards;
 DROP TABLE IF EXISTS disaster_cards;
+DROP TABLE IF EXISTS room_ids;
 
 CREATE TABLE point_cards(
 	card_name TEXT PRIMARY KEY,
@@ -21,4 +22,8 @@ CREATE TABLE disaster_cards(
 	quantity INTEGER NOT NULL,
 	disaster_type TEXT NOT NULL,
 	description TEXT NOT NULL
+);
+
+CREATE TABLE room_ids(
+    room_id TEXT PRIMARY KEY
 );

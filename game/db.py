@@ -7,11 +7,25 @@ from flask.cli import with_appcontext
 
 CONTENTS_FN = "game/static/db_content/"
 
+
 def _get_file_contents(filename):
     with open(f"{CONTENTS_FN}{filename}.tsv") as f:
         reader = csv.reader(f, delimiter='\t')
         reader.__next__()
         return [row for row in reader]
+
+
+def add_room_id(r_id):
+    db = get_db()
+    db.execute(""" INSERT INTO room_ids VALUES(?); """, (r_id,))
+    db.commit()
+
+
+def get_all_room_ids():
+    db = get_db()
+    results = db.execute(""" SELECT room_id FROM room_ids""").fetchall()
+    return [result["room_id"] for result in results]
+
 
 def get_db():
     """ Connect to the application's configured database. The connection is
@@ -55,6 +69,7 @@ def init_db():
                        VALUES(?, ?, ?); """, row)
 
     db.commit()
+
 
 @click.command("init-db")
 @with_appcontext
