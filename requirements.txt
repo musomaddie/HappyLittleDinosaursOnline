@@ -1,12 +1,12 @@
 attrs==21.4.0
-click==8.1.2
+click==8.1.3
 commonmark==0.9.1
-Flask==2.1.1
+Flask==2.1.2
 -e git+ssh://git@github.com/musomaddie/HappyLittleDinosaursOnline.git@6e27c3adce77ad079b8d69eddb167c34ea23acd6#egg=happy_little_dinosaur
-importlib-metadata==4.11.3
+importlib-metadata==4.11.4
 iniconfig==1.1.1
 itsdangerous==2.1.2
-Jinja2==3.1.1
+Jinja2==3.1.2
 MarkupSafe==2.1.1
 packaging==21.3
 pluggy==1.0.0
@@ -16,7 +16,7 @@ Pygments==2.12.0
 pyparsing==3.0.9
 pytest==7.1.2
 pytest-clarity==1.0.1
-rich==12.4.1
+rich==12.4.4
 tomli==2.0.1
-Werkzeug==2.1.1
+Werkzeug==2.1.2
 zipp==3.8.0
