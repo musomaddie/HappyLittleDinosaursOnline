@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-WAITING FOR GAME START
+<h1> WAITING FOR GAME START. </h1>
+
+<!--I'm populating this from Javascript because I don't trust this to be fetched synchronously in flask. -->
+<h2 id=""game_room_id"> </h2>
+
+<script src="{{url_for('static', filename='waiting_room.js') }}"></script>
+
 
 {% endblock %}
